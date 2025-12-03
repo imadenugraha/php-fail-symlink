@@ -1,3 +1,4 @@
 vendor/
 *.tar.gz
 config/config.php
+deploy.php
