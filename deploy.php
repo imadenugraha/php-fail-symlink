@@ -7,15 +7,25 @@ require 'recipe/common.php';
 
 set('repository', 'git@github.com:imadenugraha/php-fail-symlink.git');
 
-add('shared_files', []);
-add('shared_dirs', []);
+set('keep_releases', 3);
+
+add('shared_files', ['config/config.php']);
+add('shared_dirs', ['storage']);
 add('writable_dirs', []);
 
 // Hosts
 
-host('192.168.122.10')
+host('your-server.com')
     ->set('remote_user', 'deployer')
-    ->set('deploy_path', '~//home/php-fail-symlink');
+    ->set('deploy_path', '/home/php-fail-symlink');
+
+// Tasks
+
+task('deploy', [
+    'deploy:prepare',
+    'deploy:shared',
+    'deploy:publish',
+]);
 
 // Hooks
 
