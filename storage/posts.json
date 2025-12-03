@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "First Blog Post",
+    "author": "John Doe",
+    "date": "2025-12-01",
+    "content": "This is my first blog post. It demonstrates how relative paths and hardcoded paths can break when using symlink deployments like Capistrano. The application works fine in development but fails in production due to path issues."
+  },
+  {
+    "id": 2,
+    "title": "Understanding Symlinks",
+    "author": "Jane Smith",
+    "date": "2025-12-02",
+    "content": "Symlinks are powerful but can cause issues with PHP applications that use relative paths. When Capistrano deploys, it creates a symlink from 'current' to the release directory. If your code uses relative paths or hardcoded absolute paths, they will break."
+  },
+  {
+    "id": 3,
+    "title": "Best Practices",
+    "author": "Bob Johnson",
+    "date": "2025-12-03",
+    "content": "Always use __DIR__ and realpath() to build paths relative to the file location, not the current working directory. Avoid hardcoded absolute paths in your configuration. Instead, calculate them dynamically based on the application root."
+  }
+]

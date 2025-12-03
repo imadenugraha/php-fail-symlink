@@ -1,0 +1,25 @@
+<?php
+// config/config.php
+// PROBLEMATIC: Hardcoded absolute path specific to development environment
+// This will break when deployed to different location via Capistrano
+
+define('APP_NAME', 'Simple Blog');
+define('APP_VERSION', '1.0.0');
+
+// HARDCODED PATH - Will fail in production!
+define('BASE_PATH', '/home/made/belajar/php-fail-symlink');
+define('CONFIG_PATH', BASE_PATH . '/config');
+define('STORAGE_PATH', BASE_PATH . '/storage');
+define('VIEWS_PATH', BASE_PATH . '/views');
+
+// Database configuration
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'blog_db');
+define('DB_USER', 'root');
+define('DB_PASS', 'secret');
+
+// App settings
+define('DEBUG', true);
+define('TIMEZONE', 'Asia/Jakarta');
+
+date_default_timezone_set(TIMEZONE);
